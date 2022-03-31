@@ -1,15 +1,10 @@
-const questions = document.querySelectorAll('.question')
-const clickButtons = document.querySelectorAll('.question-btn')
-const spanIcons = document.querySelectorAll('span')
+//start by selecting all of the buttons
 
+const btns = document.querySelectorAll('.question-btn')
 
-// const clickPlusIcons = document.querySelectorAll('.plus-icon')
-// const clickMinusIcons = document.querySelectorAll('.minus-icon')
-
-clickButtons.forEach(clickButton => {
- clickButton.addEventListener('click', () => {
-    var childSpans = clickButton.childNodes
-    console.log(childSpans)
- })
+btns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const cuestion = e.currentTarget.parentElement.parentElement
+    cuestion.classList.toggle("show-text")
+  })
 })
-
